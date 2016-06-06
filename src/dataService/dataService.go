@@ -38,10 +38,6 @@ func (srv DataService) HealthCheck () (int, error) {
 	fmt.Println(strconv.Itoa(rowCount))
 	return rowCount, nil
 }
-
-func (srv DataService) CheckConfig(config *config.DbConfig) (string, error) {
-	return config.BushwickConn, nil
-}
 /*
 func (srv DataService)  AddActor() {
 	srv.repo.AddActor()

@@ -39,21 +39,6 @@ func getActors(c *gin.Context){
 	})
 }
 
-func checkConn(c *gin.Context){
-	cn, cnErr := config.LoadDbConfig()
-	if cnErr != nil{
-		c.JSON(424, gin.H{
-			"status": "424",
-			"state": "no config bro",
-		})
-	}
-
-	c.JSON(200, gin.H{
-		"status": "200",
-		"connection": cn.BushwickConn,
-	})
-}
-
 func checkHealth(c *gin.Context){
 	cn, cnErr := config.LoadDbConfig()
 	if cnErr != nil{
